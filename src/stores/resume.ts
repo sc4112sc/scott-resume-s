@@ -46,7 +46,6 @@ export interface Project {
   tags: string[]
   demoUrl?: string
   githubUrl?: string
-  ipaUrl?: string
   apkUrl?: string
   downloadHint?: string
   featured?: boolean
@@ -249,8 +248,6 @@ export const useResumeStore = defineStore('resume', () => {
       ],
       tags: ['Swift', 'UIKit', 'iOS', 'AVAudioPlayer', 'Core Data', 'RESTful API', 'GCD'],
       githubUrl: 'https://github.com/sc4112sc/JungleLife',
-      ipaUrl: '/downloads/JungleLife.ipa',
-      downloadHint: 'iOS 應用程式封裝檔（.ipa），可使用 AltStore / Sideloadly 免費側載安裝體驗。',
       featured: true,
     },
     {
@@ -281,8 +278,7 @@ export const useResumeStore = defineStore('resume', () => {
       tags: ['Flutter', 'Dart', 'BLoC Pattern', 'Firebase', 'Web Scraping', 'Geolocator'],
       githubUrl: 'https://github.com/sc4112sc/movie_people',
       apkUrl: '/downloads/MoviePeople.apk',
-      ipaUrl: '/downloads/MoviePeople.ipa',
-      downloadHint: '已提供 Android (.apk) 安裝檔，點擊即可直接下載安裝至手機實機體驗！iOS (.ipa) 可透過 AltStore / Sideloadly 側載。',
+      downloadHint: '已提供 Android (.apk) 安裝檔，點擊即可直接下載並安裝至 Android 手機實機體驗！',
       featured: true,
     },
   ])

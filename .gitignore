@@ -23,5 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 
-# Large files > 100MB exceeding GitHub limit
-public/downloads/JungleLife.ipa
+*.ipa
