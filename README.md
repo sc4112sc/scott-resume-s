@@ -1,4 +1,4 @@
-# Scott Resume (Vue 3 + Vite + TypeScript)
+# Scott Resume (scott-resume-s)
 
 現代化的個人簡歷與作品集網站，採用 Vue 3、Vite、TypeScript、Pinia、Vue Router 與 Tailwind CSS 建置。
 
@@ -37,7 +37,7 @@ yarn preview
 ## 📁 專案結構 (Project Structure)
 
 ```text
-scott-resume/
+scott-resume-s/
 ├── src/
 │   ├── assets/         # 靜態資源 (圖檔、圖示等)
 │   ├── components/     # 共用 UI 組件 (Navbar, Footer 等)
