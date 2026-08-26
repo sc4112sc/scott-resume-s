@@ -47,7 +47,6 @@ export interface Project {
   demoUrl?: string
   githubUrl?: string
   apkUrl?: string
-  downloadHint?: string
   featured?: boolean
 }
 
@@ -278,7 +277,6 @@ export const useResumeStore = defineStore('resume', () => {
       tags: ['Flutter', 'Dart', 'BLoC Pattern', 'Firebase', 'Web Scraping', 'Geolocator'],
       githubUrl: 'https://github.com/sc4112sc/movie_people',
       apkUrl: '/downloads/MoviePeople.apk',
-      downloadHint: '已提供 Android (.apk) 安裝檔，點擊即可直接下載並安裝至 Android 手機實機體驗！',
       featured: true,
     },
   ])
