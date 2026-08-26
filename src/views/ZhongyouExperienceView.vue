@@ -205,7 +205,7 @@ import { RouterLink } from 'vue-router'
           <div class="flex items-center gap-2">
             <span class="text-xl">🎬</span>
             <h3 class="font-black text-lg text-brand-yellow">
-              實際直播聊天室互動影音展示 (Live Chat Demo Video)
+              直播聊天室研究展示 (Live Chat Demo Video)
             </h3>
           </div>
           <span class="text-xs font-bold px-3 py-1 rounded-xl bg-slate-800 text-slate-300 border border-slate-700">
