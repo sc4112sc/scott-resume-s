@@ -1,6 +1,18 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useResumeStore } from '@/stores/resume'
+import {
+  Sparkles,
+  Mail,
+  Phone,
+  MapPin,
+  Check,
+  Copy,
+  PhoneCall,
+  Globe,
+  MessageSquare,
+  Send
+} from 'lucide-vue-next'
 
 const resumeStore = useResumeStore()
 
@@ -44,11 +56,13 @@ const handleSubmit = () => {
   <div class="space-y-10 py-4 sm:py-6 max-w-3xl mx-auto">
     <!-- Header -->
     <div class="text-center space-y-3 p-6 sm:p-8 rounded-3xl bg-brand-coral/15 dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop">
-      <div class="inline-flex items-center gap-1.5 rounded-xl bg-white dark:bg-slate-800 border-2 border-slate-900 px-3 py-1 text-xs font-black shadow-pop-sm">
-        <span>💌</span> Let's Connect
+      <div class="inline-flex items-center gap-1.5 rounded-xl bg-white dark:bg-slate-800 border-2 border-slate-900 px-3 py-1 text-xs font-black shadow-pop-sm text-slate-900 dark:text-white">
+        <Sparkles class="w-3.5 h-3.5 text-rose-500" />
+        <span>Let's Connect</span>
       </div>
-      <h1 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white flex items-center justify-center gap-2">
-        <span>📬</span> 聯絡與合作 (Contact)
+      <h1 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white flex items-center justify-center gap-2.5">
+        <Mail class="w-7 h-7 sm:w-8 sm:h-8 text-brand-coral" />
+        <span>聯絡與合作 (Contact)</span>
       </h1>
       <p class="text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-300 max-w-lg mx-auto leading-relaxed">
         無論是技術交流、專案合作洽詢或職缺機會，都非常歡迎隨時與我聯繫！
@@ -59,10 +73,12 @@ const handleSubmit = () => {
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
       <!-- Email Card -->
       <div
-        class="pop-card p-5 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop text-center space-y-2 flex flex-col justify-between"
+        class="pop-card p-5 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop text-center space-y-3 flex flex-col justify-between"
       >
-        <div class="space-y-1">
-          <span class="text-3xl block">✉️</span>
+        <div class="space-y-2">
+          <div class="w-11 h-11 mx-auto rounded-xl bg-amber-100 dark:bg-slate-800 border-2 border-slate-900 flex items-center justify-center shadow-pop-sm text-slate-900 dark:text-amber-400">
+            <Mail class="w-5 h-5" />
+          </div>
           <div class="text-xs font-black text-slate-400 uppercase tracking-wider">電子郵件</div>
           <div class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate">
             {{ resumeStore.profile.email }}
@@ -70,40 +86,48 @@ const handleSubmit = () => {
         </div>
         <button
           @click="copyEmail"
-          class="pop-button mt-2 w-full py-1.5 rounded-xl bg-brand-yellow text-slate-900 border-2 border-slate-900 font-black text-xs shadow-pop-sm flex items-center justify-center gap-1"
+          class="pop-button mt-2 w-full py-1.5 rounded-xl bg-brand-yellow text-slate-900 border-2 border-slate-900 font-black text-xs shadow-pop-sm flex items-center justify-center gap-1.5"
         >
-          <span>{{ copied ? '✅ 已複製！' : '📋 點擊複製' }}</span>
+          <Check v-if="copied" class="w-3.5 h-3.5 text-emerald-700 font-black" />
+          <Copy v-else class="w-3.5 h-3.5 text-slate-900" />
+          <span>{{ copied ? '已複製！' : '點擊複製' }}</span>
         </button>
       </div>
 
       <!-- Phone Card -->
       <a
         :href="`tel:${resumeStore.profile.phone}`"
-        class="pop-card p-5 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop text-center space-y-2 flex flex-col justify-between group"
+        class="pop-card p-5 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop text-center space-y-3 flex flex-col justify-between group"
       >
-        <div class="space-y-1">
-          <span class="text-3xl block group-hover:scale-110 transition-transform">📞</span>
+        <div class="space-y-2">
+          <div class="w-11 h-11 mx-auto rounded-xl bg-cyan-100 dark:bg-slate-800 border-2 border-slate-900 flex items-center justify-center shadow-pop-sm text-slate-900 dark:text-cyan-400 group-hover:scale-105 transition-transform">
+            <Phone class="w-5 h-5" />
+          </div>
           <div class="text-xs font-black text-slate-400 uppercase tracking-wider">電話聯絡</div>
           <div class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
             {{ resumeStore.profile.phone }}
           </div>
         </div>
-        <span class="w-full py-1.5 rounded-xl bg-brand-cyan text-slate-900 border-2 border-slate-900 font-black text-xs shadow-pop-sm flex items-center justify-center gap-1">
-          📲 撥打電話
+        <span class="w-full py-1.5 rounded-xl bg-brand-cyan text-slate-900 border-2 border-slate-900 font-black text-xs shadow-pop-sm flex items-center justify-center gap-1.5">
+          <PhoneCall class="w-3.5 h-3.5" />
+          <span>撥打電話</span>
         </span>
       </a>
 
       <!-- Location Card -->
-      <div class="pop-card p-5 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop text-center space-y-2 flex flex-col justify-between">
-        <div class="space-y-1">
-          <span class="text-3xl block">📍</span>
+      <div class="pop-card p-5 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop text-center space-y-3 flex flex-col justify-between">
+        <div class="space-y-2">
+          <div class="w-11 h-11 mx-auto rounded-xl bg-emerald-100 dark:bg-slate-800 border-2 border-slate-900 flex items-center justify-center shadow-pop-sm text-slate-900 dark:text-emerald-400">
+            <MapPin class="w-5 h-5" />
+          </div>
           <div class="text-xs font-black text-slate-400 uppercase tracking-wider">所在位置</div>
           <div class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
             {{ resumeStore.profile.location }}
           </div>
         </div>
-        <span class="w-full py-1.5 rounded-xl bg-brand-mint text-slate-900 border-2 border-slate-900 font-black text-xs shadow-pop-sm flex items-center justify-center">
-          🏙️ 台灣 · 台中 / 台南
+        <span class="w-full py-1.5 rounded-xl bg-brand-mint text-slate-900 border-2 border-slate-900 font-black text-xs shadow-pop-sm flex items-center justify-center gap-1">
+          <MapPin class="w-3.5 h-3.5" />
+          <span>台灣 · 台中 / 台南</span>
         </span>
       </div>
     </div>
@@ -112,7 +136,8 @@ const handleSubmit = () => {
     <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop flex flex-wrap items-center justify-between gap-4">
       <div class="space-y-0.5">
         <h3 class="text-sm font-black text-slate-900 dark:text-white flex items-center gap-1.5">
-          <span>🌐</span> 線上履歷與社群主頁
+          <Globe class="w-4 h-4 text-brand-purple" />
+          <span>線上履歷與社群主頁</span>
         </h3>
         <p class="text-xs font-bold text-slate-500">歡迎造訪我的 GitHub、CakeResume 與 Facebook</p>
       </div>
@@ -160,7 +185,8 @@ const handleSubmit = () => {
     >
       <div class="border-b-2 border-slate-100 dark:border-slate-800 pb-3">
         <h2 class="text-lg font-black text-slate-900 dark:text-white flex items-center gap-2">
-          <span>💬</span> 發送訊息 (Send a Note)
+          <MessageSquare class="w-5 h-5 text-brand-cyan" />
+          <span>發送訊息 (Send a Note)</span>
         </h2>
         <p class="text-xs font-bold text-slate-500 mt-0.5">填寫完成後將直接帶入您的信箱寄送給 {{ resumeStore.profile.name }}</p>
       </div>
@@ -215,7 +241,8 @@ const handleSubmit = () => {
         :disabled="isSubmitted"
         class="pop-button w-full py-3.5 rounded-2xl bg-brand-yellow hover:bg-amber-300 disabled:bg-slate-400 text-slate-900 font-black text-sm border-2 border-slate-900 shadow-pop flex items-center justify-center gap-2"
       >
-        <span>{{ isSubmitted ? '發送中...' : '🚀 送出訊息 (Send Message)' }}</span>
+        <Send class="w-4 h-4" />
+        <span>{{ isSubmitted ? '發送中...' : '送出訊息 (Send Message)' }}</span>
       </button>
     </form>
   </div>

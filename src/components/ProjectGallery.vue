@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { Camera, ZoomIn, X } from 'lucide-vue-next'
 
 const props = defineProps<{
   images: string[]
@@ -70,7 +71,7 @@ onUnmounted(() => {
       <!-- Image Index Badge -->
       <div class="absolute top-3 left-3 pointer-events-none">
         <span class="px-2.5 py-1 rounded-xl bg-slate-900/90 text-brand-yellow font-black text-xs border border-slate-700 backdrop-blur-md shadow-pop-sm flex items-center gap-1.5">
-          <span>📸</span>
+          <Camera class="w-3.5 h-3.5" />
           <span>0{{ activeIndex + 1 }} / 0{{ images.length }}</span>
         </span>
       </div>
@@ -78,10 +79,11 @@ onUnmounted(() => {
       <!-- Zoom Button -->
       <button
         @click="openLightbox(activeIndex)"
-        class="absolute top-3 right-3 px-3 py-1.5 rounded-xl bg-white/95 dark:bg-slate-900/95 hover:bg-brand-yellow text-slate-900 dark:text-white hover:text-slate-900 font-black text-xs border-2 border-slate-900 shadow-pop-sm transition-all flex items-center gap-1 opacity-90 group-hover:opacity-100"
+        class="absolute top-3 right-3 px-3 py-1.5 rounded-xl bg-white/95 dark:bg-slate-900/95 hover:bg-brand-yellow text-slate-900 dark:text-white hover:text-slate-900 font-black text-xs border-2 border-slate-900 shadow-pop-sm transition-all flex items-center gap-1.5 opacity-90 group-hover:opacity-100"
         title="點擊全螢幕放大"
       >
-        <span>🔍 放大檢視</span>
+        <ZoomIn class="w-3.5 h-3.5" />
+        <span>放大檢視</span>
       </button>
 
       <!-- Quick Prev / Next Arrows on Hover -->
@@ -150,9 +152,10 @@ onUnmounted(() => {
 
           <button
             @click="closeLightbox"
-            class="px-4 py-1.5 rounded-xl bg-slate-800 hover:bg-rose-500 hover:text-white text-slate-200 font-black text-sm border border-slate-700 shadow-pop-sm transition-all"
+            class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-slate-800 hover:bg-rose-500 hover:text-white text-slate-200 font-black text-sm border border-slate-700 shadow-pop-sm transition-all"
           >
-            ✕ 關閉 (ESC)
+            <X class="w-4 h-4" />
+            <span>關閉 (ESC)</span>
           </button>
         </div>
 

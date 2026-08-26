@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useResumeStore } from '@/stores/resume'
+import SkateboardIcon from '@/components/icons/SkateboardIcon.vue'
 
 const resumeStore = useResumeStore()
 const currentYear = new Date().getFullYear()
@@ -9,7 +10,7 @@ const currentYear = new Date().getFullYear()
   <footer class="mt-12 py-8 text-center text-xs sm:text-sm text-slate-600 dark:text-slate-400">
     <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-white/80 dark:bg-slate-900/80 border-2 border-slate-900 dark:border-slate-700 shadow-pop-sm">
       <div class="flex items-center gap-2 font-bold text-slate-800 dark:text-slate-200">
-        <span>🛹</span>
+        <SkateboardIcon class="w-4 h-4 text-brand-yellow" />
         <span>© {{ currentYear }} {{ resumeStore.profile.name }} ({{ resumeStore.profile.englishName }}).</span>
       </div>
 

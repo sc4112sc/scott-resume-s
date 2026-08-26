@@ -1,5 +1,28 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import {
+  Building2,
+  Briefcase,
+  Layers,
+  Radio,
+  Zap,
+  Activity,
+  Tv,
+  MessageSquare,
+  Video,
+  PlayCircle,
+  Film,
+  Apple,
+  Globe,
+  CheckCheck,
+  Bell,
+  Sparkles,
+  Paperclip,
+  Home,
+  FolderKanban
+} from 'lucide-vue-next'
+import VueIcon from '@/components/icons/VueIcon.vue'
+import FlutterIcon from '@/components/icons/FlutterIcon.vue'
 </script>
 
 <template>
@@ -13,16 +36,18 @@ import { RouterLink } from 'vue-router'
         <span>← 返回履歷總覽</span>
       </RouterLink>
 
-      <span class="text-xs font-black px-3 py-1 rounded-xl bg-brand-yellow text-slate-900 border-2 border-slate-900 shadow-pop-sm">
-        🏢 中佑資訊 · 6.5年核心研發專案
+      <span class="inline-flex items-center gap-1.5 text-xs font-black px-3 py-1 rounded-xl bg-brand-yellow text-slate-900 border-2 border-slate-900 shadow-pop-sm">
+        <Building2 class="w-3.5 h-3.5" />
+        <span>中佑資訊 · 6.5年核心研發專案</span>
       </span>
     </div>
 
     <!-- Company Hero Banner -->
     <section class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-amber-300 via-sky-200 to-indigo-300 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 p-5 sm:p-7 border-2 border-slate-900 dark:border-slate-700 shadow-pop-lg text-slate-900 dark:text-white space-y-5">
       <div class="space-y-2.5">
-        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-lg bg-white dark:bg-slate-800 border-2 border-slate-900 text-xs font-black shadow-pop-sm">
-          <span>💼</span> 2020.02 - 2026.08 · 長達 6.5 年核心研發歷程
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-white dark:bg-slate-800 border-2 border-slate-900 text-xs font-black shadow-pop-sm">
+          <Briefcase class="w-3.5 h-3.5 text-slate-900 dark:text-white" />
+          <span>2020.02 - 2026.08 · 長達 6.5 年核心研發歷程</span>
         </div>
         <h1 class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white">
           中佑資訊 · 核心專案與技術研究深度解析
@@ -34,39 +59,49 @@ import { RouterLink } from 'vue-router'
 
       <!-- Tech Stack Badges -->
       <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-slate-900/10 dark:border-slate-700">
-        <span class="text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
-          🌐 Vue 3 (Composition API)
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
+          <VueIcon class="w-3.5 h-3.5" />
+          <span>Vue 3 (Composition API)</span>
         </span>
-        <span class="text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
-          📱 Flutter (跨平台 SDK)
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
+          <FlutterIcon class="w-3.5 h-3.5" />
+          <span>Flutter (跨平台 SDK)</span>
         </span>
-        <span class="text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
-          🍎 原生 iOS (Swift / UIKit)
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
+          <Apple class="w-3.5 h-3.5 text-slate-900 dark:text-white" />
+          <span>原生 iOS (Swift / UIKit)</span>
         </span>
-        <span class="text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
-          🍍 Pinia 狀態管理
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
+          <Layers class="w-3.5 h-3.5 text-amber-500" />
+          <span>Pinia 狀態管理</span>
         </span>
-        <span class="text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
-          🧪 Vitest 單元測試
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
+          <CheckCheck class="w-3.5 h-3.5 text-emerald-500" />
+          <span>Vitest 單元測試</span>
         </span>
-        <span class="text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
-          📡 RTMP 直播推流 & WebSocket
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
+          <Radio class="w-3.5 h-3.5 text-cyan-500" />
+          <span>RTMP 直播推流 & WebSocket</span>
         </span>
-        <span class="text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
-          ⚡ Scrum 敏捷開發
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 shadow-pop-sm">
+          <Zap class="w-3.5 h-3.5 text-amber-500" />
+          <span>Scrum 敏捷開發</span>
         </span>
       </div>
 
       <!-- Quick Navigation Anchors -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
         <a href="#sports-platform" class="p-3 rounded-2xl bg-white/90 dark:bg-slate-800/90 border-2 border-slate-900 shadow-pop-sm font-black text-xs text-center hover:bg-brand-yellow hover:text-slate-900 transition-colors flex items-center justify-center gap-1.5">
-          <span>⚽</span> 體育賽事平台 & SDK
+          <Activity class="w-4 h-4 text-brand-orange" />
+          <span>體育賽事平台 & SDK</span>
         </a>
         <a href="#live-streaming" class="p-3 rounded-2xl bg-white/90 dark:bg-slate-800/90 border-2 border-slate-900 shadow-pop-sm font-black text-xs text-center hover:bg-brand-coral hover:text-white transition-colors flex items-center justify-center gap-1.5">
-          <span>📺</span> 即時直播串流平台
+          <Tv class="w-4 h-4 text-brand-coral" />
+          <span>即時直播串流平台</span>
         </a>
         <a href="#im-and-research" class="p-3 rounded-2xl bg-white/90 dark:bg-slate-800/90 border-2 border-slate-900 shadow-pop-sm font-black text-xs text-center hover:bg-brand-cyan hover:text-slate-900 transition-colors flex items-center justify-center gap-1.5">
-          <span>💬</span> 即時通訊、測試與技術調優
+          <MessageSquare class="w-4 h-4 text-brand-cyan" />
+          <span>即時通訊、測試與技術調優</span>
         </a>
       </div>
     </section>
@@ -74,8 +109,8 @@ import { RouterLink } from 'vue-router'
     <!-- SECTION 1: 體育賽事資訊與跨平台 SDK -->
     <section id="sports-platform" class="space-y-6 pt-4">
       <div class="flex items-center gap-3 border-b-2 border-slate-900/10 dark:border-slate-700 pb-3">
-        <span class="w-10 h-10 rounded-xl bg-brand-yellow border-2 border-slate-900 flex items-center justify-center text-lg shadow-pop-sm">
-          ⚽
+        <span class="w-10 h-10 rounded-xl bg-brand-yellow border-2 border-slate-900 flex items-center justify-center shadow-pop-sm">
+          <Activity class="w-5 h-5 text-slate-900" />
         </span>
         <div>
           <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
@@ -188,8 +223,8 @@ import { RouterLink } from 'vue-router'
     <!-- SECTION 2: 即時直播與多媒體串流平台 -->
     <section id="live-streaming" class="space-y-6 pt-6">
       <div class="flex items-center gap-3 border-b-2 border-slate-900/10 dark:border-slate-700 pb-3">
-        <span class="w-10 h-10 rounded-xl bg-brand-coral text-white border-2 border-slate-900 flex items-center justify-center text-lg shadow-pop-sm">
-          📺
+        <span class="w-10 h-10 rounded-xl bg-brand-coral text-white border-2 border-slate-900 flex items-center justify-center shadow-pop-sm">
+          <Tv class="w-5 h-5 text-white" />
         </span>
         <div>
           <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
@@ -203,13 +238,14 @@ import { RouterLink } from 'vue-router'
       <div class="pop-card p-6 sm:p-8 rounded-3xl bg-slate-950 text-white border-2 border-slate-900 shadow-pop-lg space-y-4">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
           <div class="flex items-center gap-2">
-            <span class="text-xl">🎬</span>
+            <Video class="w-5 h-5 text-brand-yellow" />
             <h3 class="font-black text-lg text-brand-yellow">
               直播聊天室研究展示 (Live Chat Demo Video)
             </h3>
           </div>
-          <span class="text-xs font-bold px-3 py-1 rounded-xl bg-slate-800 text-slate-300 border border-slate-700">
-            📹 MP4 實錄展示 · 彈幕與即時在線
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-xl bg-slate-800 text-slate-300 border border-slate-700">
+            <PlayCircle class="w-3.5 h-3.5 text-brand-yellow" />
+            <span>MP4 實錄展示 · 彈幕與即時在線</span>
           </span>
         </div>
 
@@ -223,8 +259,9 @@ import { RouterLink } from 'vue-router'
             您的瀏覽器不支援影片播放。
           </video>
         </div>
-        <p class="text-xs text-slate-400 leading-relaxed font-medium">
-          🎥 展示直播間內高併發即時訊息流、彈幕發送、在線人數同步、贈禮互動與跑馬燈廣播機制。
+        <p class="flex items-center gap-1.5 text-xs text-slate-400 leading-relaxed font-medium">
+          <Film class="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
+          <span>展示直播間內高併發即時訊息流、彈幕發送、在線人數同步、贈禮互動與跑馬燈廣播機制。</span>
         </p>
       </div>
 
@@ -286,7 +323,7 @@ import { RouterLink } from 'vue-router'
       <!-- Live Stream Highlights Box -->
       <div class="pop-card p-6 sm:p-8 rounded-3xl bg-slate-950 text-white border-2 border-slate-900 shadow-pop-lg space-y-4">
         <div class="flex items-center gap-2 border-b border-slate-800 pb-3">
-          <span class="text-xl">⚡</span>
+          <Zap class="w-5 h-5 text-brand-yellow" />
           <h3 class="font-black text-lg text-brand-yellow">
             高併發即時訊息流與彈幕渲染核心技術
           </h3>
@@ -301,8 +338,8 @@ import { RouterLink } from 'vue-router'
     <section id="im-and-research" class="space-y-6 pt-6">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-2 border-slate-900/10 dark:border-slate-700 pb-3">
         <div class="flex items-center gap-3">
-          <span class="w-10 h-10 rounded-xl bg-brand-cyan border-2 border-slate-900 flex items-center justify-center text-lg shadow-pop-sm flex-shrink-0">
-            💬
+          <span class="w-10 h-10 rounded-xl bg-brand-cyan border-2 border-slate-900 flex items-center justify-center shadow-pop-sm flex-shrink-0">
+            <MessageSquare class="w-5 h-5 text-slate-900" />
           </span>
           <div>
             <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
@@ -320,7 +357,7 @@ import { RouterLink } from 'vue-router'
             rel="noopener noreferrer"
             class="pop-button px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-brand-yellow hover:text-slate-900 text-slate-900 dark:text-white font-black text-xs border-2 border-slate-900 shadow-pop-sm flex items-center gap-1.5 transition-transform"
           >
-            <span>🍎</span>
+            <Apple class="w-3.5 h-3.5" />
             <span>iOS App</span>
             <span class="text-[10px]">↗</span>
           </a>
@@ -331,7 +368,7 @@ import { RouterLink } from 'vue-router'
             rel="noopener noreferrer"
             class="pop-button px-3.5 py-1.5 rounded-xl bg-brand-cyan hover:bg-cyan-400 text-slate-900 font-black text-xs border-2 border-slate-900 shadow-pop-sm flex items-center gap-1.5 transition-transform"
           >
-            <span>🌐</span>
+            <Globe class="w-3.5 h-3.5" />
             <span>Web 線上版</span>
             <span class="text-[10px]">↗</span>
           </a>
@@ -397,7 +434,7 @@ import { RouterLink } from 'vue-router'
       <div class="pop-card p-6 sm:p-8 rounded-3xl bg-indigo-950 text-white border-2 border-slate-900 shadow-pop-lg space-y-3">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-indigo-800 pb-3">
           <div class="flex items-center gap-2">
-            <span class="text-2xl">🧪</span>
+            <CheckCheck class="w-6 h-6 text-brand-mint" />
             <h3 class="font-black text-lg text-brand-yellow">
               為團隊導入 Vitest 自動化單元測試體系
             </h3>
@@ -417,7 +454,7 @@ import { RouterLink } from 'vue-router'
         <!-- Topic 1: Web Push -->
         <div class="pop-card p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-3">
           <div class="flex items-center gap-2 pb-1 border-b-2 border-slate-100 dark:border-slate-800">
-            <span class="text-2xl">🔔</span>
+            <Bell class="w-5 h-5 text-brand-cyan" />
             <h3 class="font-black text-base text-slate-900 dark:text-white">
               Web Push 網頁推播深度研究
             </h3>
@@ -436,7 +473,7 @@ import { RouterLink } from 'vue-router'
         <!-- Topic 2: Rive -->
         <div class="pop-card p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-3">
           <div class="flex items-center gap-2 pb-1 border-b-2 border-slate-100 dark:border-slate-800">
-            <span class="text-2xl">🚀</span>
+            <Sparkles class="w-5 h-5 text-brand-purple" />
             <h3 class="font-black text-base text-slate-900 dark:text-white">
               Rive 向量動畫效能排查與調優
             </h3>
@@ -455,7 +492,7 @@ import { RouterLink } from 'vue-router'
         <!-- Topic 3: Preview -->
         <div class="pop-card p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-3">
           <div class="flex items-center gap-2 pb-1 border-b-2 border-slate-100 dark:border-slate-800">
-            <span class="text-2xl">📎</span>
+            <Paperclip class="w-5 h-5 text-brand-pink" />
             <h3 class="font-black text-base text-slate-900 dark:text-white">
               Web 多檔案與連結元數據預覽技術
             </h3>
@@ -487,15 +524,17 @@ import { RouterLink } from 'vue-router'
       <div class="flex items-center gap-3">
         <RouterLink
           to="/"
-          class="pop-button px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-black text-xs sm:text-sm border border-slate-700 shadow-pop-sm"
+          class="pop-button px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-black text-xs sm:text-sm border border-slate-700 shadow-pop-sm flex items-center gap-1.5"
         >
-          🏠 履歷總覽
+          <Home class="w-4 h-4" />
+          <span>履歷總覽</span>
         </RouterLink>
         <RouterLink
           to="/projects"
-          class="pop-button px-4 py-2 rounded-xl bg-brand-yellow hover:bg-amber-300 text-slate-900 font-black text-xs sm:text-sm border-2 border-slate-900 shadow-pop"
+          class="pop-button px-4 py-2 rounded-xl bg-brand-yellow hover:bg-amber-300 text-slate-900 font-black text-xs sm:text-sm border-2 border-slate-900 shadow-pop flex items-center gap-1.5"
         >
-          🚀 精選專案作品
+          <FolderKanban class="w-4 h-4" />
+          <span>精選專案作品</span>
         </RouterLink>
       </div>
     </div>

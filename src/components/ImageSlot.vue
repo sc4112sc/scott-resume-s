@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import { Image as ImageIcon } from 'lucide-vue-next'
 
 const props = withDefaults(
   defineProps<{
@@ -55,7 +56,7 @@ const handleError = () => {
       class="w-full h-full flex flex-col items-center justify-center p-6 text-center text-slate-400 dark:text-slate-400 space-y-2 select-none bg-gradient-to-br from-slate-800 to-slate-900"
     >
       <div class="w-12 h-12 rounded-2xl bg-slate-800 border-2 border-slate-700 flex items-center justify-center text-xl shadow-pop-sm">
-        🖼️
+        <ImageIcon class="w-6 h-6 text-slate-400" />
       </div>
       <p class="text-xs font-black text-slate-200">{{ placeholderText }}</p>
     </div>

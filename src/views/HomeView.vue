@@ -3,14 +3,48 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useResumeStore } from '@/stores/resume'
 import { RouterLink } from 'vue-router'
 import ImageSlot from '@/components/ImageSlot.vue'
+import {
+  Rocket,
+  Zap,
+  Target,
+  Clock,
+  MapPin,
+  Mail,
+  Phone,
+  FolderKanban,
+  Send,
+  User,
+  Briefcase,
+  Images,
+  Check,
+  Sparkles,
+  ArrowUpRight,
+  Cpu,
+  Globe,
+  Smartphone,
+  Wrench,
+  Trophy,
+  Award,
+  Medal,
+  Eye,
+  ZoomIn,
+  GraduationCap,
+  Heart,
+  X,
+  Dumbbell
+} from 'lucide-vue-next'
+import SkateboardIcon from '@/components/icons/SkateboardIcon.vue'
+import BadmintonIcon from '@/components/icons/BadmintonIcon.vue'
+import SpinningTopIcon from '@/components/icons/SpinningTopIcon.vue'
+import WavingHandIcon from '@/components/icons/WavingHandIcon.vue'
 
 const resumeStore = useResumeStore()
 
 const hobbies = [
-  { icon: '🛹', title: '滑板 (Skateboarding)', desc: '享受街頭滑行與挑戰自我的暢快感' },
-  { icon: '🏸', title: '羽球 (Badminton)', desc: '敏捷反應與團隊搭檔的揮汗運動' },
-  { icon: '🏋️', title: '健身 (Fitness)', desc: '維持專注與高體能的最佳充電站' },
-  { icon: '🪀', title: '打陀螺 (Spinning Tops)', desc: '專注與力學結合的療癒手感活動' },
+  { icon: SkateboardIcon, color: 'text-amber-500 dark:text-amber-400', title: '滑板 (Skateboarding)', desc: '享受街頭滑行與挑戰自我的暢快感' },
+  { icon: BadmintonIcon, color: 'text-cyan-500 dark:text-cyan-400', title: '羽球 (Badminton)', desc: '敏捷反應與團隊搭檔的揮汗運動' },
+  { icon: Dumbbell, color: 'text-rose-500 dark:text-rose-400', title: '健身 (Fitness)', desc: '維持專注與高體能的最佳充電站' },
+  { icon: SpinningTopIcon, color: 'text-emerald-500 dark:text-emerald-400', title: '打陀螺 (Spinning Tops)', desc: '專注與力學結合的療癒手感活動' },
 ]
 
 // Universal Lightbox Modal State
@@ -74,11 +108,13 @@ onUnmounted(() => {
     <!-- Hero Banner (Vibrant & Playful) -->
     <section class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-amber-300 via-rose-300 to-indigo-300 dark:from-slate-900 dark:via-indigo-950 dark:to-slate-900 p-6 sm:p-10 border-2 border-slate-900 dark:border-slate-700 shadow-pop-lg text-slate-900 dark:text-white">
       <!-- Background floating stickers decoration -->
-      <div class="absolute -right-6 -top-6 w-36 h-36 rounded-full bg-brand-yellow/60 border-2 border-slate-900 -rotate-12 hidden md:flex items-center justify-center font-black text-xs shadow-pop-sm select-none">
-        🚀 6.5+ 年經驗
+      <div class="absolute -right-6 -top-6 w-36 h-36 rounded-full bg-brand-yellow/70 border-2 border-slate-900 -rotate-12 hidden md:flex items-center justify-center font-black text-xs shadow-pop-sm select-none gap-1">
+        <Rocket class="w-4 h-4 text-slate-900" />
+        <span>6.5+ 年經驗</span>
       </div>
-      <div class="absolute right-12 -bottom-4 w-28 h-28 rounded-2xl bg-brand-cyan/60 border-2 border-slate-900 rotate-6 hidden md:flex items-center justify-center font-black text-xs shadow-pop-sm select-none">
-        ⚡ Vue3 & App
+      <div class="absolute right-12 -bottom-4 w-28 h-28 rounded-2xl bg-brand-cyan/70 border-2 border-slate-900 rotate-6 hidden md:flex items-center justify-center font-black text-xs shadow-pop-sm select-none gap-1">
+        <Zap class="w-4 h-4 text-slate-900" />
+        <span>Vue3 & App</span>
       </div>
 
       <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-6 sm:gap-8">
@@ -101,8 +137,8 @@ onUnmounted(() => {
 
               <!-- Zoom Hover Overlay -->
               <div class="absolute inset-0 bg-slate-950/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                <span class="px-2.5 py-1 rounded-xl bg-brand-yellow text-slate-900 font-black text-xs border-2 border-slate-900 shadow-pop-sm flex items-center gap-1">
-                  <span>🔍</span>
+                <span class="px-2.5 py-1 rounded-xl bg-brand-yellow text-slate-900 font-black text-xs border-2 border-slate-900 shadow-pop-sm flex items-center gap-1.5">
+                  <ZoomIn class="w-3.5 h-3.5" />
                   <span>放大</span>
                 </span>
               </div>
@@ -120,17 +156,19 @@ onUnmounted(() => {
         <div class="flex-1 text-center md:text-left space-y-4">
           <div class="flex flex-wrap items-center justify-center md:justify-start gap-2">
             <span class="inline-flex items-center gap-1.5 rounded-xl bg-white dark:bg-slate-800 border-2 border-slate-900 px-3 py-1 text-xs font-black shadow-pop-sm text-slate-900 dark:text-white">
-              <span>🎯</span> 應徵：{{ resumeStore.profile.jobTarget }}
+              <Target class="w-3.5 h-3.5 text-rose-500" />
+              <span>應徵：{{ resumeStore.profile.jobTarget }}</span>
             </span>
             <span class="inline-flex items-center gap-1.5 rounded-xl bg-brand-yellow text-slate-900 border-2 border-slate-900 px-3 py-1 text-xs font-black shadow-pop-sm">
-              <span>⏱️</span> 工作經驗：{{ resumeStore.profile.experienceYears }}
+              <Clock class="w-3.5 h-3.5 text-slate-900" />
+              <span>工作經驗：{{ resumeStore.profile.experienceYears }}</span>
             </span>
           </div>
 
           <div>
-            <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white">
-              哈囉！我是 {{ resumeStore.profile.name }}
-              <span class="inline-block animate-wiggle">👋</span>
+            <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white flex items-center justify-center md:justify-start gap-2">
+              <span>哈囉！我是 {{ resumeStore.profile.name }}</span>
+              <WavingHandIcon class="w-8 h-8 sm:w-10 sm:h-10 inline-block text-amber-500 align-middle animate-wiggle flex-shrink-0" />
             </h1>
             <p class="text-lg sm:text-xl font-black text-indigo-900 dark:text-sky-300 mt-1">
               {{ resumeStore.profile.englishName }} · {{ resumeStore.profile.title }}
@@ -139,17 +177,20 @@ onUnmounted(() => {
 
           <!-- Quick Badges -->
           <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 pt-1">
-            <span class="bg-white/80 dark:bg-slate-800/80 border-2 border-slate-900 px-3 py-1 rounded-xl text-xs font-bold shadow-pop-sm">
-              📍 {{ resumeStore.profile.location }}
+            <span class="inline-flex items-center gap-1.5 bg-white/80 dark:bg-slate-800/80 border-2 border-slate-900 px-3 py-1 rounded-xl text-xs font-bold shadow-pop-sm">
+              <MapPin class="w-3.5 h-3.5 text-rose-500" />
+              <span>{{ resumeStore.profile.location }}</span>
             </span>
             <a
               :href="`mailto:${resumeStore.profile.email}`"
-              class="bg-white/80 dark:bg-slate-800/80 hover:bg-brand-cyan hover:text-slate-900 border-2 border-slate-900 px-3 py-1 rounded-xl text-xs font-bold shadow-pop-sm transition-all"
+              class="inline-flex items-center gap-1.5 bg-white/80 dark:bg-slate-800/80 hover:bg-brand-cyan hover:text-slate-900 border-2 border-slate-900 px-3 py-1 rounded-xl text-xs font-bold shadow-pop-sm transition-all"
             >
-              ✉️ {{ resumeStore.profile.email }}
+              <Mail class="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+              <span>{{ resumeStore.profile.email }}</span>
             </a>
-            <span class="bg-white/80 dark:bg-slate-800/80 border-2 border-slate-900 px-3 py-1 rounded-xl text-xs font-bold shadow-pop-sm">
-              📞 {{ resumeStore.profile.phone }}
+            <span class="inline-flex items-center gap-1.5 bg-white/80 dark:bg-slate-800/80 border-2 border-slate-900 px-3 py-1 rounded-xl text-xs font-bold shadow-pop-sm">
+              <Phone class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+              <span>{{ resumeStore.profile.phone }}</span>
             </span>
           </div>
 
@@ -159,13 +200,15 @@ onUnmounted(() => {
               to="/projects"
               class="pop-button px-5 py-2.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-black text-sm border-2 border-slate-900 shadow-pop flex items-center gap-2"
             >
-              <span>🚀 查看精選作品</span>
+              <FolderKanban class="w-4 h-4 text-brand-yellow" />
+              <span>查看精選作品</span>
             </RouterLink>
             <RouterLink
               to="/contact"
               class="pop-button px-5 py-2.5 rounded-2xl bg-brand-coral hover:bg-rose-400 text-white font-black text-sm border-2 border-slate-900 shadow-pop flex items-center gap-2"
             >
-              <span>📬 與我聊聊 (Contact)</span>
+              <Send class="w-4 h-4" />
+              <span>與我聊聊 (Contact)</span>
             </RouterLink>
             <a
               :href="resumeStore.profile.social.job104"
@@ -191,8 +234,8 @@ onUnmounted(() => {
     <!-- About Me / 自傳 -->
     <section class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-4">
       <div class="flex items-center gap-3 border-b-2 border-slate-900/10 dark:border-slate-700 pb-3">
-        <span class="w-10 h-10 rounded-xl bg-brand-yellow border-2 border-slate-900 flex items-center justify-center text-lg shadow-pop-sm">
-          💡
+        <span class="w-10 h-10 rounded-xl bg-brand-yellow border-2 border-slate-900 flex items-center justify-center shadow-pop-sm">
+          <User class="w-5 h-5 text-slate-900" />
         </span>
         <div>
           <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">關於我 (About Me)</h2>
@@ -211,8 +254,8 @@ onUnmounted(() => {
     <section class="space-y-6">
       <div class="flex items-center justify-between border-b-2 border-slate-900/10 dark:border-slate-700 pb-3">
         <div class="flex items-center gap-3">
-          <span class="w-10 h-10 rounded-xl bg-brand-cyan border-2 border-slate-900 flex items-center justify-center text-lg shadow-pop-sm">
-            💼
+          <span class="w-10 h-10 rounded-xl bg-brand-cyan border-2 border-slate-900 flex items-center justify-center shadow-pop-sm">
+            <Briefcase class="w-5 h-5 text-slate-900" />
           </span>
           <div>
             <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">工作經歷 (Experience)</h2>
@@ -269,7 +312,8 @@ onUnmounted(() => {
               type="button"
               class="pop-button px-3.5 py-1.5 rounded-xl bg-brand-cyan hover:bg-cyan-300 text-slate-900 font-black text-xs border-2 border-slate-900 shadow-pop-sm flex items-center gap-1.5 transition-all"
             >
-              <span>🖼️ 查看實習/VR作品圖片 ({{ exp.images.length }}張)</span>
+              <Images class="w-3.5 h-3.5" />
+              <span>查看實習/VR作品圖片 ({{ exp.images.length }}張)</span>
               <span>↗</span>
             </button>
           </div>
@@ -284,7 +328,7 @@ onUnmounted(() => {
                 class="flex items-start gap-2.5"
               >
                 <span class="w-5 h-5 rounded-full bg-brand-mint text-slate-900 font-black text-xs flex items-center justify-center flex-shrink-0 mt-0.5 border border-slate-900">
-                  ✓
+                  <Check class="w-3 h-3 stroke-[3]" />
                 </span>
                 <span class="leading-relaxed">{{ hl }}</span>
               </li>
@@ -293,15 +337,16 @@ onUnmounted(() => {
 
           <!-- Deep-dive page button for Zhongyou Information -->
           <div v-if="exp.id === 'zy-info'" class="pt-3 border-t-2 border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div class="text-xs font-bold text-slate-600 dark:text-slate-300">
-              💡 包含體育賽事資訊平台、即時直播串流、TalkTo 通訊平台與 Vitest 單元測試
+            <div class="flex items-center gap-1.5 text-xs font-bold text-slate-600 dark:text-slate-300">
+              <Sparkles class="w-3.5 h-3.5 text-amber-500 flex-shrink-0" />
+              <span>包含體育賽事資訊平台、即時直播串流、TalkTo 通訊平台與 Vitest 單元測試</span>
             </div>
             <RouterLink
               to="/experience/zhongyou"
-              class="pop-button px-4 py-2.5 rounded-2xl bg-brand-yellow hover:bg-amber-300 text-slate-900 font-black text-xs sm:text-sm border-2 border-slate-900 shadow-pop flex items-center justify-center gap-2 transition-all self-start sm:self-auto"
+              class="pop-button px-4 py-2.5 rounded-2xl bg-brand-yellow hover:bg-amber-300 text-slate-900 font-black text-xs sm:text-sm border-2 border-slate-900 shadow-pop flex items-center justify-center gap-1.5 transition-all self-start sm:self-auto"
             >
-              <span>🚀 查看中佑 6.5年核心研發與專案深度專頁</span>
-              <span>↗</span>
+              <span>查看中佑 6.5年核心研發與專案深度專頁</span>
+              <ArrowUpRight class="w-4 h-4" />
             </RouterLink>
           </div>
         </div>
@@ -311,8 +356,8 @@ onUnmounted(() => {
     <!-- Skills Matrix (專業技能矩陣) -->
     <section class="space-y-6">
       <div class="flex items-center gap-3 border-b-2 border-slate-900/10 dark:border-slate-700 pb-3">
-        <span class="w-10 h-10 rounded-xl bg-brand-mint border-2 border-slate-900 flex items-center justify-center text-lg shadow-pop-sm">
-          ⚡
+        <span class="w-10 h-10 rounded-xl bg-brand-mint border-2 border-slate-900 flex items-center justify-center shadow-pop-sm">
+          <Cpu class="w-5 h-5 text-slate-900" />
         </span>
         <div>
           <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">專業技能 (Skills & Tech Stack)</h2>
@@ -326,8 +371,12 @@ onUnmounted(() => {
           :key="group.category"
           class="pop-card p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-4"
         >
-          <div class="flex items-center gap-2 pb-2 border-b-2 border-slate-100 dark:border-slate-800">
-            <span class="text-2xl">{{ group.icon }}</span>
+          <div class="flex items-center gap-2.5 pb-2 border-b-2 border-slate-100 dark:border-slate-800">
+            <div class="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-900 flex items-center justify-center shadow-pop-sm">
+              <Globe v-if="group.icon === 'globe'" class="w-4 h-4 text-blue-600 dark:text-sky-400" />
+              <Smartphone v-else-if="group.icon === 'smartphone'" class="w-4 h-4 text-rose-500 dark:text-pink-400" />
+              <Wrench v-else class="w-4 h-4 text-amber-600 dark:text-amber-400" />
+            </div>
             <h3 class="font-black text-slate-900 dark:text-white text-base">
               {{ group.category }}
             </h3>
@@ -349,8 +398,8 @@ onUnmounted(() => {
     <section class="space-y-6">
       <div class="flex items-center justify-between border-b-2 border-slate-900/10 dark:border-slate-700 pb-3">
         <div class="flex items-center gap-3">
-          <span class="w-10 h-10 rounded-xl bg-brand-yellow border-2 border-slate-900 flex items-center justify-center text-lg shadow-pop-sm">
-            🏆
+          <span class="w-10 h-10 rounded-xl bg-brand-yellow border-2 border-slate-900 flex items-center justify-center shadow-pop-sm">
+            <Trophy class="w-5 h-5 text-slate-900" />
           </span>
           <div>
             <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">獲獎與認證 (Licenses & Awards)</h2>
@@ -369,7 +418,7 @@ onUnmounted(() => {
           <!-- Certificate Image Preview Frame -->
           <div
             class="relative h-56 w-full bg-slate-950/90 border-b-2 border-slate-900 dark:border-slate-700 flex items-center justify-center p-3 cursor-zoom-in overflow-hidden"
-            @click="openGallery(item.title, item.category === 'license' ? '📜 國際專業認證' : '🥇 獲獎榮譽', [item.image], item.description)"
+            @click="openGallery(item.title, item.category === 'license' ? '國際專業認證' : '競賽榮譽', [item.image], item.description)"
           >
             <img
               :src="item.image"
@@ -381,7 +430,7 @@ onUnmounted(() => {
             <!-- Hover Zoom Overlay -->
             <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
               <span class="px-3 py-1.5 rounded-xl bg-brand-yellow text-slate-900 font-black text-xs border-2 border-slate-900 shadow-pop-sm flex items-center gap-1.5">
-                <span>🔍</span>
+                <ZoomIn class="w-3.5 h-3.5" />
                 <span>點擊放大檢視</span>
               </span>
             </div>
@@ -400,13 +449,15 @@ onUnmounted(() => {
               <div class="flex items-center gap-2">
                 <span
                   :class="[
-                    'text-[10px] font-black px-2 py-0.5 rounded-md border border-slate-900 uppercase',
+                    'inline-flex items-center gap-1 text-[10px] font-black px-2 py-0.5 rounded-md border border-slate-900 uppercase',
                     item.category === 'license'
                       ? 'bg-brand-cyan text-slate-900'
                       : 'bg-brand-pink text-white'
                   ]"
                 >
-                  {{ item.category === 'license' ? '📜 國際認證' : '🥇 競賽榮譽' }}
+                  <Award v-if="item.category === 'license'" class="w-3 h-3" />
+                  <Medal v-else class="w-3 h-3" />
+                  <span>{{ item.category === 'license' ? '國際認證' : '競賽榮譽' }}</span>
                 </span>
                 <span v-if="item.issuer" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 truncate">
                   {{ item.issuer }}
@@ -424,10 +475,11 @@ onUnmounted(() => {
 
             <button
               type="button"
-              @click="openGallery(item.title, item.category === 'license' ? '📜 國際專業認證' : '🥇 獲獎榮譽', [item.image], item.description)"
+              @click="openGallery(item.title, item.category === 'license' ? '國際專業認證' : '競賽榮譽', [item.image], item.description)"
               class="pop-button w-full mt-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brand-yellow dark:hover:bg-brand-yellow text-slate-800 dark:text-slate-200 hover:text-slate-900 dark:hover:text-slate-900 font-black text-xs border-2 border-slate-900 shadow-pop-sm flex items-center justify-center gap-1.5 transition-colors"
             >
-              <span>🔍 檢視完整證書</span>
+              <Eye class="w-3.5 h-3.5" />
+              <span>檢視完整證書</span>
             </button>
           </div>
         </div>
@@ -437,8 +489,8 @@ onUnmounted(() => {
     <!-- Education (學歷與專業培訓) -->
     <section class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-6">
       <div class="flex items-center gap-3 border-b-2 border-slate-100 dark:border-slate-800 pb-3">
-        <span class="w-10 h-10 rounded-xl bg-brand-cyan border-2 border-slate-900 flex items-center justify-center text-lg shadow-pop-sm">
-          🎓
+        <span class="w-10 h-10 rounded-xl bg-brand-cyan border-2 border-slate-900 flex items-center justify-center shadow-pop-sm">
+          <GraduationCap class="w-5 h-5 text-slate-900" />
         </span>
         <div>
           <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">學歷與培訓 (Education & Training)</h2>
@@ -479,7 +531,8 @@ onUnmounted(() => {
               @click="openGallery(edu.school + ' · 學歷/專題照片', '學歷與培訓', edu.images, '實踐大學資訊模擬與設計學系相關照片紀錄。')"
               class="pop-button w-full sm:w-auto px-3.5 py-1.5 rounded-xl bg-brand-yellow hover:bg-amber-300 text-slate-900 font-black text-xs border-2 border-slate-900 shadow-pop-sm flex items-center justify-center gap-1.5 transition-all"
             >
-              <span>🖼️ 查看相關照片 ({{ edu.images.length }}張)</span>
+              <Images class="w-3.5 h-3.5" />
+              <span>查看相關照片 ({{ edu.images.length }}張)</span>
               <span>↗</span>
             </button>
           </div>
@@ -487,20 +540,21 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <!-- Beyond Coding / Hobbies Section (活潑生活特質 - 移動到最後) -->
+    <!-- Beyond Coding / Hobbies Section (活潑生活特質) -->
     <section class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-cyan-100 via-pink-100 to-amber-100 dark:from-slate-900 dark:via-indigo-950 dark:to-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-6">
       <div class="flex items-center justify-between border-b-2 border-slate-900/10 dark:border-slate-700 pb-3">
         <div class="flex items-center gap-3">
-          <span class="w-10 h-10 rounded-xl bg-brand-pink text-white border-2 border-slate-900 flex items-center justify-center text-lg shadow-pop-sm">
-            🛹
+          <span class="w-10 h-10 rounded-xl bg-brand-pink text-white border-2 border-slate-900 flex items-center justify-center shadow-pop-sm">
+            <Heart class="w-5 h-5 text-white fill-white/20" />
           </span>
           <div>
             <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">程式之外 (Beyond Coding)</h2>
             <p class="text-xs font-bold text-slate-600 dark:text-slate-400">保持工作與生活平衡的充沛活力</p>
           </div>
         </div>
-        <span class="text-xs font-bold px-3 py-1 rounded-xl bg-white dark:bg-slate-800 border-2 border-slate-900 shadow-pop-sm">
-          🌟 Work-Life Harmony
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-xl bg-white dark:bg-slate-800 border-2 border-slate-900 shadow-pop-sm">
+          <Sparkles class="w-3.5 h-3.5 text-amber-500" />
+          <span>Work-Life Harmony</span>
         </span>
       </div>
 
@@ -510,7 +564,9 @@ onUnmounted(() => {
           :key="hobby.title"
           class="p-4 rounded-2xl bg-white/90 dark:bg-slate-800/90 border-2 border-slate-900 shadow-pop-sm space-y-2 hover:-translate-y-1 transition-transform"
         >
-          <div class="text-3xl">{{ hobby.icon }}</div>
+          <div class="p-2 w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-900 border-2 border-slate-900 flex items-center justify-center shadow-pop-sm">
+            <component :is="hobby.icon" :class="['w-7 h-7', hobby.color]" />
+          </div>
           <h3 class="font-black text-sm text-slate-900 dark:text-white">{{ hobby.title }}</h3>
           <p class="text-xs font-medium text-slate-600 dark:text-slate-300 leading-relaxed">{{ hobby.desc }}</p>
         </div>
@@ -540,9 +596,10 @@ onUnmounted(() => {
 
           <button
             @click="closeGallery"
-            class="px-4 py-1.5 rounded-xl bg-slate-800 hover:bg-rose-500 hover:text-white text-slate-200 font-black text-sm border border-slate-700 shadow-pop-sm transition-all"
+            class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-slate-800 hover:bg-rose-500 hover:text-white text-slate-200 font-black text-sm border border-slate-700 shadow-pop-sm transition-all"
           >
-            ✕ 關閉 (ESC)
+            <X class="w-4 h-4" />
+            <span>關閉 (ESC)</span>
           </button>
         </div>
 

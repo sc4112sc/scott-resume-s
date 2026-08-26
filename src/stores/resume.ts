@@ -173,17 +173,17 @@ export const useResumeStore = defineStore('resume', () => {
   const skillGroups = ref<SkillGroup[]>([
     {
       category: '前端開發 (Web Frontend)',
-      icon: '🌐',
+      icon: 'globe',
       skills: ['Vue 3 (Composition API)', 'Vue 2', 'TypeScript', 'JavaScript (ES6+)', 'Tailwind CSS', 'Vite', 'Pinia', 'HTML5 / CSS3', 'Nuxt', 'React'],
     },
     {
       category: '行動應用開發 (Mobile App)',
-      icon: '📱',
+      icon: 'smartphone',
       skills: ['Flutter (跨平台)', 'Dart', 'Swift (原生 iOS)', 'UIKit / Xcode', 'BLoC 架構', 'GetX', 'RxSwift', 'Clean Architecture'],
     },
     {
       category: '工程規範、工具與後端技術 (Engineering & Tools)',
-      icon: '⚙️',
+      icon: 'cpu',
       skills: ['Golang', 'Unit Testing (單元測試)', 'Scrum 敏捷開發', 'Git / GitHub', 'RESTful API / WebSocket', 'Firebase (Realtime DB / Auth)', 'Unity 3D', 'Java'],
     },
   ])

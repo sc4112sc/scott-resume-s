@@ -1,6 +1,17 @@
 <script setup lang="ts">
 import { useResumeStore } from '@/stores/resume'
 import ProjectGallery from '@/components/ProjectGallery.vue'
+import {
+  LayoutGrid,
+  FolderKanban,
+  Sparkles,
+  BookOpen,
+  Images,
+  Cpu,
+  ExternalLink,
+  Download
+} from 'lucide-vue-next'
+import AndroidIcon from '@/components/icons/AndroidIcon.vue'
 
 const resumeStore = useResumeStore()
 </script>
@@ -10,8 +21,9 @@ const resumeStore = useResumeStore()
     <!-- Header Banner -->
     <div class="p-6 sm:p-8 rounded-3xl bg-brand-yellow dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div class="space-y-2">
-        <div class="inline-flex items-center gap-1.5 rounded-xl bg-white dark:bg-slate-800 border-2 border-slate-900 px-3 py-1 text-xs font-black shadow-pop-sm">
-          <span>🎨</span> 代表作展示 · 專案功能截圖
+        <div class="inline-flex items-center gap-1.5 rounded-xl bg-white dark:bg-slate-800 border-2 border-slate-900 px-3 py-1 text-xs font-black shadow-pop-sm text-slate-900 dark:text-white">
+          <LayoutGrid class="w-3.5 h-3.5 text-slate-900 dark:text-white" />
+          <span>代表作展示 · 專案功能截圖</span>
         </div>
         <h1 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
           精選專案作品 (Projects)
@@ -21,8 +33,8 @@ const resumeStore = useResumeStore()
         </p>
       </div>
 
-      <div class="flex items-center gap-2">
-        <span class="text-2xl sm:text-3xl">🚀</span>
+      <div class="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 border-2 border-slate-900 flex items-center justify-center shadow-pop-sm flex-shrink-0">
+        <FolderKanban class="w-6 h-6 text-slate-900 dark:text-white" />
       </div>
     </div>
 
@@ -57,9 +69,10 @@ const resumeStore = useResumeStore()
             </span>
             <span
               v-if="project.featured"
-              class="text-xs font-black px-3 py-1 rounded-xl bg-brand-yellow text-slate-900 border-2 border-slate-900 shadow-pop-sm"
+              class="inline-flex items-center gap-1 text-xs font-black px-3 py-1 rounded-xl bg-brand-yellow text-slate-900 border-2 border-slate-900 shadow-pop-sm"
             >
-              ⭐ Featured
+              <Sparkles class="w-3 h-3 text-amber-700 fill-amber-500" />
+              <span>Featured</span>
             </span>
           </div>
         </div>
@@ -67,7 +80,8 @@ const resumeStore = useResumeStore()
         <!-- Project Overview -->
         <div class="space-y-2">
           <h3 class="text-xs font-black uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-            <span>📖</span> 專案簡介 (Overview)
+            <BookOpen class="w-3.5 h-3.5" />
+            <span>專案簡介 (Overview)</span>
           </h3>
           <p class="text-sm sm:text-base font-medium text-slate-700 dark:text-slate-200 leading-relaxed p-4 sm:p-5 rounded-2xl bg-amber-50/50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
             {{ project.description }}
@@ -78,7 +92,8 @@ const resumeStore = useResumeStore()
         <div class="space-y-2">
           <div class="flex items-center justify-between pb-1">
             <h3 class="text-xs font-black uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-              <span>🖼️</span> 專案畫面展示 (Screenshots)
+              <Images class="w-3.5 h-3.5" />
+              <span>專案畫面展示 (Screenshots)</span>
             </h3>
             <span class="text-[11px] font-bold text-slate-500">點擊縮圖切換，點擊大圖可開啟全螢幕原解析度檢視</span>
           </div>
@@ -115,7 +130,8 @@ const resumeStore = useResumeStore()
               rel="noopener noreferrer"
               class="pop-button px-4 py-2 rounded-xl bg-brand-coral hover:bg-rose-500 text-white font-black text-xs sm:text-sm border-2 border-slate-900 shadow-pop flex items-center gap-1.5"
             >
-              <span>🚀 Live Demo 即時展示</span>
+              <ExternalLink class="w-3.5 h-3.5" />
+              <span>Live Demo 即時展示</span>
               <span>↗</span>
             </a>
             <a
@@ -124,8 +140,9 @@ const resumeStore = useResumeStore()
               download="MoviePeople.apk"
               class="pop-button px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs sm:text-sm border-2 border-slate-900 shadow-pop flex items-center gap-1.5"
             >
-              <span>🤖 下載 Android APK</span>
-              <span>⬇</span>
+              <AndroidIcon class="w-4 h-4 text-white" />
+              <span>下載 Android APK</span>
+              <Download class="w-3.5 h-3.5" />
             </a>
             <a
               v-if="project.githubUrl"
@@ -143,7 +160,8 @@ const resumeStore = useResumeStore()
         <!-- Key Implementations (主要實作重點) -->
         <div class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-950/60 border-2 border-slate-900 dark:border-slate-700 space-y-3 shadow-pop-sm">
           <h3 class="text-sm font-black text-slate-900 dark:text-white flex items-center gap-2">
-            <span>⚙️</span> 主要實作重點 (Key Implementations)
+            <Cpu class="w-4 h-4 text-amber-500" />
+            <span>主要實作重點 (Key Implementations)</span>
           </h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
             <div

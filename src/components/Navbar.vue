@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { useResumeStore } from '@/stores/resume'
+import { Sparkles, Home, FolderKanban, Mail } from 'lucide-vue-next'
 
 const resumeStore = useResumeStore()
 </script>
@@ -23,7 +24,7 @@ const resumeStore = useResumeStore()
             <span class="font-black text-base text-slate-900 dark:text-white tracking-tight">
               {{ resumeStore.profile.name }}
             </span>
-            <span class="text-xs">✨</span>
+            <Sparkles class="w-3.5 h-3.5 text-amber-500 fill-amber-400" />
           </div>
           <span class="text-[11px] font-bold text-slate-500 dark:text-slate-400">
             {{ resumeStore.profile.englishName }} · Frontend Dev
@@ -36,23 +37,26 @@ const resumeStore = useResumeStore()
         <RouterLink
           to="/"
           active-class="!bg-brand-yellow !text-slate-900 !border-slate-900 shadow-pop-sm font-black"
-          class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 border-2 border-transparent hover:border-slate-900 hover:bg-amber-100 dark:hover:bg-slate-800 transition-all"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 border-2 border-transparent hover:border-slate-900 hover:bg-amber-100 dark:hover:bg-slate-800 transition-all"
         >
-          🏠 履歷總覽
+          <Home class="w-4 h-4" />
+          <span>履歷總覽</span>
         </RouterLink>
         <RouterLink
           to="/projects"
           active-class="!bg-brand-cyan !text-slate-900 !border-slate-900 shadow-pop-sm font-black"
-          class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 border-2 border-transparent hover:border-slate-900 hover:bg-cyan-100 dark:hover:bg-slate-800 transition-all"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 border-2 border-transparent hover:border-slate-900 hover:bg-cyan-100 dark:hover:bg-slate-800 transition-all"
         >
-          🚀 作品專案
+          <FolderKanban class="w-4 h-4" />
+          <span>作品專案</span>
         </RouterLink>
         <RouterLink
           to="/contact"
           active-class="!bg-brand-coral !text-white !border-slate-900 shadow-pop-sm font-black"
-          class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 border-2 border-transparent hover:border-slate-900 hover:bg-rose-100 dark:hover:bg-slate-800 transition-all"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 border-2 border-transparent hover:border-slate-900 hover:bg-rose-100 dark:hover:bg-slate-800 transition-all"
         >
-          📬 聯絡我
+          <Mail class="w-4 h-4" />
+          <span>聯絡我</span>
         </RouterLink>
 
         <!-- Social Buttons -->
