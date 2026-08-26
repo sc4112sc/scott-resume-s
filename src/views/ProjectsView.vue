@@ -107,7 +107,7 @@ const resumeStore = useResumeStore()
           </div>
 
           <!-- Action Links -->
-          <div class="flex flex-wrap items-center gap-2.5 pt-2 sm:pt-0">
+          <div class="flex flex-wrap items-center justify-end gap-2.5 pt-2 sm:pt-0 sm:ml-auto w-full sm:w-auto">
             <a
               v-if="project.demoUrl"
               :href="project.demoUrl"
