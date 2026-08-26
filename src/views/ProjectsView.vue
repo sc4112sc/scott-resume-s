@@ -119,6 +119,26 @@ const resumeStore = useResumeStore()
               <span>↗</span>
             </a>
             <a
+              v-if="project.apkUrl"
+              :href="project.apkUrl"
+              download
+              class="pop-button px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs sm:text-sm border-2 border-slate-900 shadow-pop flex items-center gap-1.5"
+              :title="project.downloadHint"
+            >
+              <span>🤖 下載 Android APK</span>
+              <span>⬇</span>
+            </a>
+            <a
+              v-if="project.ipaUrl"
+              :href="project.ipaUrl"
+              download
+              class="pop-button px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-black text-xs sm:text-sm border-2 border-slate-900 shadow-pop flex items-center gap-1.5"
+              :title="project.downloadHint"
+            >
+              <span>🍎 下載 iOS (.ipa)</span>
+              <span>⬇</span>
+            </a>
+            <a
               v-if="project.githubUrl"
               :href="project.githubUrl"
               target="_blank"
@@ -128,6 +148,39 @@ const resumeStore = useResumeStore()
               <span>GitHub Repo</span>
               <span>↗</span>
             </a>
+          </div>
+        </div>
+
+        <!-- Sideload / Install Instructions Hint for Mobile Apps -->
+        <div
+          v-if="project.downloadHint"
+          class="flex items-start gap-3 p-3.5 sm:p-4 rounded-2xl bg-emerald-50/80 dark:bg-slate-800/80 border-2 border-emerald-300 dark:border-emerald-900/60 text-xs font-bold text-slate-700 dark:text-slate-200 shadow-pop-sm"
+        >
+          <span class="text-lg flex-shrink-0">📲</span>
+          <div class="space-y-1">
+            <div class="font-black text-emerald-950 dark:text-emerald-300 flex items-center gap-1.5">
+              <span>安裝與體驗說明 (Installation Guide)：</span>
+              <span v-if="project.apkUrl" class="px-2 py-0.5 rounded-md bg-emerald-200 dark:bg-emerald-900/80 text-emerald-900 dark:text-emerald-100 text-[10px] font-black">Android 支援一鍵安裝</span>
+            </div>
+            <p class="font-medium text-slate-600 dark:text-slate-300 leading-relaxed">
+              {{ project.downloadHint }}
+            </p>
+            <div v-if="project.ipaUrl" class="text-[11px] text-slate-500 dark:text-slate-400 font-medium pt-0.5">
+              💡 提示：iOS 裝置下載 <code>.ipa</code> 後，推薦透過免費的
+              <a
+                href="https://sideloadly.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-indigo-600 dark:text-indigo-400 font-black underline hover:text-indigo-800"
+              >Sideloadly</a>
+              或 <a
+                href="https://altstore.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-indigo-600 dark:text-indigo-400 font-black underline hover:text-indigo-800"
+              >AltStore</a>
+              使用個人 Apple ID 即可一鍵免費側載至 iPhone 實機體驗。
+            </div>
           </div>
         </div>
 
