@@ -7,7 +7,6 @@ import Footer from '@/components/Footer.vue'
 <template>
   <div class="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased selection:bg-sky-500 selection:text-white">
     <Navbar />
-
     <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8">
       <RouterView v-slot="{ Component }">
         <transition name="fade" mode="out-in">
