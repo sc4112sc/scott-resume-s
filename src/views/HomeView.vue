@@ -244,7 +244,11 @@ onUnmounted(() => {
       </div>
 
       <div class="space-y-4 text-slate-700 dark:text-slate-200 leading-relaxed text-sm sm:text-base font-medium">
-        <p v-for="(p, i) in resumeStore.profile.bioParagraphs" :key="i" class="p-3.5 rounded-2xl bg-amber-50/60 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+        <p
+          v-for="(p, i) in resumeStore.profile.bioParagraphs"
+          :key="i"
+          class="p-4 sm:p-5 rounded-2xl bg-amber-50/40 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700"
+        >
           {{ p }}
         </p>
       </div>
