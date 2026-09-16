@@ -24,6 +24,10 @@ const router = createRouter({
       redirect: '/experience/zhongyou',
     },
     {
+      path: '/products',
+      redirect: '/experience/zhongyou',
+    },
+    {
       path: '/contact',
       name: 'contact',
       component: () => import('@/views/ContactView.vue'),

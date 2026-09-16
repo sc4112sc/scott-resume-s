@@ -1,17 +1,24 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
+import { computed } from 'vue'
+import { RouterLink, useRoute } from 'vue-router'
 import { useResumeStore } from '@/stores/resume'
-import { Sparkles, Home, FolderKanban, Mail } from 'lucide-vue-next'
+import { Sparkles, Home, FolderKanban, Mail, Building2 } from 'lucide-vue-next'
 
 const resumeStore = useResumeStore()
+const route = useRoute()
+
+const isHome = computed(() => route.path === '/')
+const isCompany = computed(() => route.path.startsWith('/experience') || route.path === '/products')
+const isProjects = computed(() => route.path.startsWith('/projects'))
+const isContact = computed(() => route.path === '/contact')
 </script>
 
 <template>
-  <header class="sticky top-4 z-50 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto mb-4">
-    <div class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-2 border-slate-900 dark:border-slate-700 rounded-2xl shadow-pop p-2 sm:px-5 flex items-center justify-between transition-all">
+  <header class="sticky top-2 sm:top-4 z-50 px-2 sm:px-6 lg:px-8 max-w-5xl mx-auto mb-4">
+    <div class="bg-white/50 dark:bg-slate-900/60 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/35 supports-[backdrop-filter]:dark:bg-slate-900/45 border-2 border-slate-900 dark:border-slate-700 rounded-2xl shadow-pop p-1.5 sm:p-2 sm:px-5 flex items-center justify-between transition-all gap-1 sm:gap-2">
       <!-- Brand Avatar & Logo -->
-      <RouterLink to="/" class="flex items-center space-x-3 group">
-        <div class="relative w-10 h-10 rounded-xl bg-brand-yellow border-2 border-slate-900 overflow-hidden shadow-pop-sm group-hover:rotate-6 group-hover:scale-105 transition-transform flex items-center justify-center font-black text-slate-900">
+      <RouterLink to="/" class="flex items-center space-x-2 sm:space-x-3 group flex-shrink-0">
+        <div class="relative w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-brand-yellow border-2 border-slate-900 overflow-hidden shadow-pop-sm group-hover:rotate-6 group-hover:scale-105 transition-transform flex items-center justify-center font-black text-slate-900">
           <img
             :src="resumeStore.profile.avatar"
             :alt="resumeStore.profile.name"
@@ -20,47 +27,59 @@ const resumeStore = useResumeStore()
           />
         </div>
         <div class="flex flex-col">
-          <div class="flex items-center gap-1.5">
-            <span class="font-black text-base text-slate-900 dark:text-white tracking-tight">
+          <div class="flex items-center gap-1">
+            <span class="font-black text-xs sm:text-base text-slate-900 dark:text-white tracking-tight whitespace-nowrap">
               {{ resumeStore.profile.name }}
             </span>
-            <Sparkles class="w-3.5 h-3.5 text-amber-500 fill-amber-400" />
+            <Sparkles class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-500 fill-amber-400 flex-shrink-0" />
           </div>
-          <span class="text-[11px] font-bold text-slate-500 dark:text-slate-400">
+          <span class="text-[11px] font-bold text-slate-500 dark:text-slate-400 hidden md:block">
             {{ resumeStore.profile.englishName }} · Frontend Dev
           </span>
         </div>
       </RouterLink>
 
       <!-- Nav Links -->
-      <nav class="flex items-center space-x-1 sm:space-x-2">
+      <nav class="flex items-center space-x-1 sm:space-x-2 flex-nowrap flex-shrink-0">
         <RouterLink
           to="/"
+          title="履歷總覽"
           active-class="!bg-brand-yellow !text-slate-900 !border-slate-900 shadow-pop-sm font-black"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 border-2 border-transparent hover:border-slate-900 hover:bg-amber-100 dark:hover:bg-slate-800 transition-all"
+          class="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 border-2 border-transparent hover:border-slate-900 hover:bg-amber-100 dark:hover:bg-slate-800 transition-all whitespace-nowrap flex-shrink-0"
         >
-          <Home class="w-4 h-4" />
-          <span>履歷總覽</span>
+          <Home class="w-4 h-4 flex-shrink-0" />
+          <span :class="[isHome ? 'inline' : 'hidden sm:inline', 'whitespace-nowrap']">履歷總覽</span>
+        </RouterLink>
+        <RouterLink
+          to="/experience/zhongyou"
+          title="公司產品"
+          active-class="!bg-brand-purple !text-white !border-slate-900 shadow-pop-sm font-black"
+          class="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 border-2 border-transparent hover:border-slate-900 hover:bg-purple-100 dark:hover:bg-slate-800 transition-all whitespace-nowrap flex-shrink-0"
+        >
+          <Building2 class="w-4 h-4 flex-shrink-0" />
+          <span :class="[isCompany ? 'inline' : 'hidden sm:inline', 'whitespace-nowrap']">公司產品</span>
         </RouterLink>
         <RouterLink
           to="/projects"
+          title="作品專案"
           active-class="!bg-brand-cyan !text-slate-900 !border-slate-900 shadow-pop-sm font-black"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 border-2 border-transparent hover:border-slate-900 hover:bg-cyan-100 dark:hover:bg-slate-800 transition-all"
+          class="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 border-2 border-transparent hover:border-slate-900 hover:bg-cyan-100 dark:hover:bg-slate-800 transition-all whitespace-nowrap flex-shrink-0"
         >
-          <FolderKanban class="w-4 h-4" />
-          <span>作品專案</span>
+          <FolderKanban class="w-4 h-4 flex-shrink-0" />
+          <span :class="[isProjects ? 'inline' : 'hidden sm:inline', 'whitespace-nowrap']">作品專案</span>
         </RouterLink>
         <RouterLink
           to="/contact"
+          title="聯絡我"
           active-class="!bg-brand-coral !text-white !border-slate-900 shadow-pop-sm font-black"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 border-2 border-transparent hover:border-slate-900 hover:bg-rose-100 dark:hover:bg-slate-800 transition-all"
+          class="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 border-2 border-transparent hover:border-slate-900 hover:bg-rose-100 dark:hover:bg-slate-800 transition-all whitespace-nowrap flex-shrink-0"
         >
-          <Mail class="w-4 h-4" />
-          <span>聯絡我</span>
+          <Mail class="w-4 h-4 flex-shrink-0" />
+          <span :class="[isContact ? 'inline' : 'hidden sm:inline', 'whitespace-nowrap']">聯絡我</span>
         </RouterLink>
 
         <!-- Social Buttons -->
-        <div class="hidden sm:flex items-center pl-2 border-l-2 border-slate-200 dark:border-slate-800 ml-1 space-x-2">
+        <div class="hidden sm:flex items-center pl-2 border-l-2 border-slate-200 dark:border-slate-800 ml-1 space-x-2 flex-nowrap flex-shrink-0">
           <a
             :href="resumeStore.profile.social.github"
             target="_blank"

@@ -125,7 +125,7 @@ import FlutterIcon from '@/components/icons/FlutterIcon.vue'
         <!-- Item A -->
         <div class="pop-card p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-3">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-0.5 rounded-lg bg-brand-yellow text-slate-900 font-black text-xs border border-slate-900">
+            <span class="px-2.5 py-0.5 rounded-lg bg-brand-yellow text-slate-900 font-black text-xs border border-slate-900 whitespace-nowrap flex-shrink-0">
               客端開發
             </span>
             <h3 class="font-black text-lg text-slate-900 dark:text-white">
@@ -151,7 +151,7 @@ import FlutterIcon from '@/components/icons/FlutterIcon.vue'
         <!-- Item B -->
         <div class="pop-card p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-3">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-0.5 rounded-lg bg-brand-cyan text-slate-900 font-black text-xs border border-slate-900">
+            <span class="px-2.5 py-0.5 rounded-lg bg-brand-cyan text-slate-900 font-black text-xs border border-slate-900 whitespace-nowrap flex-shrink-0">
               原生 iOS SDK
             </span>
             <h3 class="font-black text-lg text-slate-900 dark:text-white">
@@ -177,7 +177,7 @@ import FlutterIcon from '@/components/icons/FlutterIcon.vue'
         <!-- Item C -->
         <div class="pop-card p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-3">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-0.5 rounded-lg bg-brand-mint text-slate-900 font-black text-xs border border-slate-900">
+            <span class="px-2.5 py-0.5 rounded-lg bg-brand-mint text-slate-900 font-black text-xs border border-slate-900 whitespace-nowrap flex-shrink-0">
               跨平台研究
             </span>
             <h3 class="font-black text-lg text-slate-900 dark:text-white">
@@ -199,7 +199,7 @@ import FlutterIcon from '@/components/icons/FlutterIcon.vue'
         <!-- Item D -->
         <div class="pop-card p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-3">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-0.5 rounded-lg bg-brand-coral text-white font-black text-xs border border-slate-900">
+            <span class="px-2.5 py-0.5 rounded-lg bg-brand-coral text-white font-black text-xs border border-slate-900 whitespace-nowrap flex-shrink-0">
               工程優化
             </span>
             <h3 class="font-black text-lg text-slate-900 dark:text-white">
@@ -270,7 +270,7 @@ import FlutterIcon from '@/components/icons/FlutterIcon.vue'
         <!-- Item A -->
         <div class="pop-card p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-3">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-0.5 rounded-lg bg-brand-pink text-white font-black text-xs border border-slate-900">
+            <span class="px-2.5 py-0.5 rounded-lg bg-brand-pink text-white font-black text-xs border border-slate-900 whitespace-nowrap flex-shrink-0">
               全端架構
             </span>
             <h3 class="font-black text-lg text-slate-900 dark:text-white">
@@ -296,7 +296,7 @@ import FlutterIcon from '@/components/icons/FlutterIcon.vue'
         <!-- Item B -->
         <div class="pop-card p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-3">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-0.5 rounded-lg bg-brand-coral text-white font-black text-xs border border-slate-900">
+            <span class="px-2.5 py-0.5 rounded-lg bg-brand-coral text-white font-black text-xs border border-slate-900 whitespace-nowrap flex-shrink-0">
               原生 iOS
             </span>
             <h3 class="font-black text-lg text-slate-900 dark:text-white">
@@ -380,7 +380,7 @@ import FlutterIcon from '@/components/icons/FlutterIcon.vue'
         <!-- Item A: Web 客服與會員端 -->
         <div class="pop-card p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-3">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-0.5 rounded-lg bg-brand-cyan text-slate-900 font-black text-xs border border-slate-900">
+            <span class="px-2.5 py-0.5 rounded-lg bg-brand-cyan text-slate-900 font-black text-xs border border-slate-900 whitespace-nowrap flex-shrink-0">
               Web 客服/會員端
             </span>
             <h3 class="font-black text-lg text-slate-900 dark:text-white">
@@ -406,7 +406,7 @@ import FlutterIcon from '@/components/icons/FlutterIcon.vue'
         <!-- Item B: 控端管理後台 -->
         <div class="pop-card p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 shadow-pop space-y-3">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-0.5 rounded-lg bg-brand-mint text-slate-900 font-black text-xs border border-slate-900">
+            <span class="px-2.5 py-0.5 rounded-lg bg-brand-mint text-slate-900 font-black text-xs border border-slate-900 whitespace-nowrap flex-shrink-0">
               控端管理後台
             </span>
             <h3 class="font-black text-lg text-slate-900 dark:text-white">
