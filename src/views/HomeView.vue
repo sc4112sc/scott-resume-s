@@ -339,7 +339,7 @@ onUnmounted(() => {
           <div v-if="exp.id === 'zy-info'" class="pt-3 border-t-2 border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div class="flex items-center gap-1.5 text-xs font-bold text-slate-600 dark:text-slate-300">
               <Sparkles class="w-3.5 h-3.5 text-amber-500 flex-shrink-0" />
-              <span>包含體育賽事資訊平台、即時直播串流、TalkTo 通訊平台與 Vitest 單元測試</span>
+              <span>包含 TalkTo 即時通訊平台、體育遊戲、即時直播聊天室與平台後台</span>
             </div>
             <RouterLink
               to="/experience/zhongyou"
