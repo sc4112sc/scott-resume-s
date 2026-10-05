@@ -89,10 +89,11 @@ export const useResumeStore = defineStore('resume', () => {
       period: 'Feb 2020 - Aug 2026',
       role: '工程師',
       products: '即時通訊軟體、體育遊戲資訊平台、直播串流系統、平台管理後台',
-      technologies: ['Vue 3', 'Vue.js', 'Flutter', '原生 iOS (Swift/UIKit)', 'Pinia', 'Vitest 單元測試', 'WebSocket / Socket.io', 'Scrum 敏捷開發'],
+      technologies: ['Vue 3', 'Vue.js', 'Flutter', '原生 iOS (Swift/UIKit)', 'Pinia', 'Vitest 單元測試', 'WebSocket / Socket.io', 'Web 安全防護 (XSS / DOMPurify)', 'Scrum 敏捷開發'],
       highlights: [
         '主導 Web 與跨平台 App（Vue 3、Flutter、原生 iOS）架構設計、功能開發、單元測試（Vitest）與上架維運，具備體育賽事獨立上架與核心模組 SDK 封裝能力。',
         '評估新技術導入可行性，導入虛擬列表與分批載入解決萬筆訊息渲染效能瓶頸，推進舊系統由 Vue 2 升級重構至 Vue 3，並擔任前端技術窗口推動團隊知識分享與代碼審查。',
+        '落實前端資安防禦體系，於即時通訊聊天室與管理後台導入 DOMPurify 白名單過濾、HTML Entity 編碼與 URL 偽協定校驗，徹底杜絕 Stored / DOM-based XSS 攻擊風險。',
         '協同企劃、美術以及後端規劃系統架構，實現即時通訊平台、高頻賽事盤口與直播串流等 Web 與 App 各項核心業務需求。',
         '遵循 Scrum 流程與每日站會進行自我技術和時程控管，確保多端專案高效穩定交付。',
       ],
@@ -171,7 +172,7 @@ export const useResumeStore = defineStore('resume', () => {
     {
       category: '前端開發 (Web Frontend)',
       icon: 'globe',
-      skills: ['Vue 3 (Composition API)', 'Vue 2', 'TypeScript', 'JavaScript (ES6+)', 'Tailwind CSS', 'Vite', 'Pinia', 'HTML5 / CSS3', 'Nuxt', 'React'],
+      skills: ['Vue 3 (Composition API)', 'Vue 2', 'TypeScript', 'JavaScript (ES6+)', 'Tailwind CSS', 'Vite', 'Pinia', 'HTML5 / CSS3', 'Nuxt', 'Web 安全 (XSS / CSP)'],
     },
     {
       category: '行動應用開發 (Mobile App)',
